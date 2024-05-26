@@ -14,6 +14,7 @@ describe("DateWizard", () => {
   it("should create a DateWizard instance with the correct timestamp", () => {
     expect(wizard).toBeInstanceOf(DateWizard);
     expect(wizard.toDate()).toEqual(new Date(Date.UTC(2024, 4, 20)));
+    expect(wizard.getString()).toBe("20-05-2024");
   });
 
   //operation with dates
