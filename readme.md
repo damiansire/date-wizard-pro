@@ -18,17 +18,46 @@ npm install date-wizard-pro
 
 ## Usage
 
+### Instance Methods:
+
 ```javascript
 import DateWizard from "date-wizard-pro";
 
-const myDate = new DateWizard("25-12-2023"); // Christmas 2023
-console.log(myDate.getString()); // Output: "25-12-2023"
+// Create a DateWizard instance
+const myDate = new DateWizard("12-25-2023"); // Christmas 2023
 
+// addDays()
 myDate.addDays(7);
 console.log(myDate.getString("yyyy-mm-dd")); // Output: "2024-01-01" (New Year's Day 2024)
 
+// subtractDays()
 myDate.subtractDays(10);
-console.log(myDate.getString()); // Output: "2023-12-21"
+console.log(myDate.getString()); // Output: "2023-12-15"
+
+// toDate()
+const jsDate = myDate.toDate();
+console.log(jsDate); // Output: JavaScript Date object (2023-12-15T00:00:00.000Z)
+
+// getString()
+console.log(myDate.getString("mm/dd/yyyy")); // Output: "12/15/2023"
+```
+
+### Static Methods:
+
+```javascript
+import DateWizard from "date-wizard-pro";
+
+// DateWizard.addDays()
+const newYear = DateWizard.addDays("12-25-2023", 7);
+console.log(newYear); // Output: "01-01-2024"
+
+// DateWizard.subtractDays()
+const pastDate = DateWizard.subtractDays("12-25-2023", 10);
+console.log(pastDate); // Output: "12-15-2023"
+
+// DateWizard.getString()
+const formattedDate = DateWizard.getString("12-25-2023", "yyyy-mm-dd");
+console.log(formattedDate); // Output: "2023-12-25"
 ```
 
 ## API
