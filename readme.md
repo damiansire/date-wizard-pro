@@ -62,6 +62,8 @@ console.log(formattedDate); // Output: "2023-12-25"
 
 ## API
 
+### Instance Methods:
+
 #### `new DateWizard(dateString: string)`
 
 Creates a new `DateWizard` instance. `dateString` should be in the format "dd-mm-yyyy".
