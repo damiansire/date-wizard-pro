@@ -33,23 +33,23 @@ console.log(myDate.getString()); // Output: "2023-12-21"
 
 ## API
 
-### `new DateWizard(dateString: string)`
+#### `new DateWizard(dateString: string)`
 
 Creates a new `DateWizard` instance. `dateString` should be in the format "dd-mm-yyyy".
 
-### `addDays(days: number): this`
+#### `addDays(days: number): this`
 
 Adds the specified number of `days` to the date. Returns the `DateWizard` instance for method chaining.
 
-### `subtractDays(days: number): this`
+#### `subtractDays(days: number): this`
 
 Subtracts the specified number of `days` from the date. Returns the `DateWizard` instance for method chaining.
 
-### `toDate(): Date`
+#### `toDate(): Date`
 
 Converts the `DateWizard` instance to a native JavaScript `Date` object.
 
-### `getString(formatString = "dd-mm-yyyy"): string`
+#### `getString(formatString = "dd-mm-yyyy"): string`
 
 Returns the date as a formatted string. The `formatString` argument can be customized (e.g., "yyyy-mm-dd", "mm/dd/yyyy").
 
