@@ -53,6 +53,20 @@ Converts the `DateWizard` instance to a native JavaScript `Date` object.
 
 Returns the date as a formatted string. The `formatString` argument can be customized (e.g., "yyyy-mm-dd", "mm/dd/yyyy").
 
+### Static Methods
+
+#### `DateWizard.addDays(dateString: string, days: number): string`
+
+Adds the specified number of `days` to the given `dateString` and returns the result as a formatted string in the default format ("dd-mm-yyyy").
+
+#### `DateWizard.subtractDays(dateString: string, days: number): string`
+
+Subtracts the specified number of `days` from the given `dateString` and returns the result as a formatted string in the default format ("dd-mm-yyyy").
+
+#### `DateWizard.getString(dateString: string, formatString = "dd-mm-yyyy"): string`
+
+Returns the given `dateString` formatted according to the specified `formatString`. If no `formatString` is provided, the default format ("dd-mm-yyyy") is used.
+
 ## Contributing
 
 Contributions are welcome! If you have suggestions or find any issues, please feel free to open an issue or submit a pull request.

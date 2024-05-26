@@ -30,6 +30,24 @@ class DateWizard {
       .replace("mm", month)
       .replace("yyyy", year);
   }
+
+  //Static Methods
+  static addDays(dateString: string, days: number): string {
+    const dateWizard = new DateWizard(dateString);
+    dateWizard.addDays(days);
+    return dateWizard.getString();
+  }
+
+  static subtractDays(dateString: string, days: number): string {
+    const dateWizard = new DateWizard(dateString);
+    dateWizard.subtractDays(days);
+    return dateWizard.getString();
+  }
+
+  static getString(dateString: string, formatString = "dd-mm-yyyy"): string {
+    const dateWizard = new DateWizard(dateString);
+    return dateWizard.getString(formatString);
+  }
 }
 
 export default DateWizard;
