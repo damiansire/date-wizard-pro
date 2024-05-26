@@ -16,6 +16,7 @@ describe("DateWizard", () => {
     expect(wizard.toDate()).toEqual(new Date(Date.UTC(2024, 4, 20)));
   });
 
+  //operation with dates
   it("should adds days that exceed the end of the month", () => {
     wizard.addDays(12);
     expect(wizard.getString()).toBe("01-06-2024");
@@ -46,14 +47,6 @@ describe("DateWizard", () => {
     expect(wizard.getString()).toBe("20-05-2023");
   });
 
-  /*
-  it("should getString the date correctly", () => {
-    expect(wizard.getString()).toBe("20-05-2024");
-    expect(wizard.getString("yyyy/MM/dd")).toBe("2024/05/20");
-  });
-
-  */
-
   it("should handle leap years correctly", () => {
     wizard = new DateWizard("29-02-2024"); //Leap-year
     wizard.addDays(1);
@@ -63,5 +56,30 @@ describe("DateWizard", () => {
   it("should handle negative days in addDays", () => {
     wizard.addDays(-7);
     expect(wizard.getString()).toBe("13-05-2024");
+  });
+
+  //date formatting
+  it("correctly formats dates in the 'mm-dd-yyyy' format", () => {
+    expect(wizard.getString("mm-dd-yyyy")).toBe("05-20-2024");
+  });
+
+  it("correctly formats dates in the 'dd-mm-yyyy' format", () => {
+    expect(wizard.getString("dd-mm-yyyy")).toBe("20-05-2024");
+  });
+
+  it("correctly formats dates in the 'yyyy-mm-dd' format", () => {
+    expect(wizard.getString("yyyy-mm-dd")).toBe("2024-05-20");
+  });
+
+  it("correctly formats dates in the 'mm/dd/yyyy' format", () => {
+    expect(wizard.getString("mm/dd/yyyy")).toBe("05/20/2024");
+  });
+
+  it("correctly formats dates in the 'dd/mm/yyyy' format", () => {
+    expect(wizard.getString("dd/mm/yyyy")).toBe("20/05/2024");
+  });
+
+  it("correctly formats dates in the 'yyyy/mm/dd' format", () => {
+    expect(wizard.getString("yyyy/mm/dd")).toBe("2024/05/20");
   });
 });

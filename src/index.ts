@@ -19,9 +19,7 @@ class DateWizard {
     return new Date(this.timestamp);
   }
 
-  getString(): string {
-    const formatString = "dd-MM-yyyy";
-
+  getString(formatString = "dd-mm-yyyy"): string {
     const date = this.toDate();
     const day = date.getUTCDate().toString().padStart(2, "0");
     const month = (date.getUTCMonth() + 1).toString().padStart(2, "0");
@@ -29,7 +27,7 @@ class DateWizard {
 
     return formatString
       .replace("dd", day)
-      .replace("MM", month)
+      .replace("mm", month)
       .replace("yyyy", year);
   }
 }
