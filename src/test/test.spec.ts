@@ -18,38 +18,38 @@ describe("DateWizard", () => {
 
   it("should adds days that exceed the end of the month", () => {
     wizard.addDays(12);
-    expect(wizard.format()).toBe("01-06-2024");
+    expect(wizard.getString()).toBe("01-06-2024");
   });
 
   it("should adds days that exceed the end of the year", () => {
     wizard.addDays(365);
-    expect(wizard.format()).toBe("20-05-2025");
+    expect(wizard.getString()).toBe("20-05-2025");
   });
 
   it("should add days correctly", () => {
     wizard.addDays(5);
-    expect(wizard.format()).toBe("25-05-2024");
+    expect(wizard.getString()).toBe("25-05-2024");
   });
 
   it("should subtract days correctly", () => {
     wizard.subtractDays(10);
-    expect(wizard.format()).toBe("10-05-2024");
+    expect(wizard.getString()).toBe("10-05-2024");
   });
 
   it("should subtract days exceed the start of the month", () => {
     wizard.subtractDays(30);
-    expect(wizard.format()).toBe("20-04-2024");
+    expect(wizard.getString()).toBe("20-04-2024");
   });
 
   it("should subtract days exceed the start of the year", () => {
     wizard.subtractDays(366);
-    expect(wizard.format()).toBe("20-05-2023");
+    expect(wizard.getString()).toBe("20-05-2023");
   });
 
   /*
-  it("should format the date correctly", () => {
-    expect(wizard.format()).toBe("20-05-2024");
-    expect(wizard.format("yyyy/MM/dd")).toBe("2024/05/20");
+  it("should getString the date correctly", () => {
+    expect(wizard.getString()).toBe("20-05-2024");
+    expect(wizard.getString("yyyy/MM/dd")).toBe("2024/05/20");
   });
 
   */
@@ -57,11 +57,11 @@ describe("DateWizard", () => {
   it("should handle leap years correctly", () => {
     wizard = new DateWizard("29-02-2024"); //Leap-year
     wizard.addDays(1);
-    expect(wizard.format()).toBe("01-03-2024");
+    expect(wizard.getString()).toBe("01-03-2024");
   });
 
   it("should handle negative days in addDays", () => {
     wizard.addDays(-7);
-    expect(wizard.format()).toBe("13-05-2024");
+    expect(wizard.getString()).toBe("13-05-2024");
   });
 });

@@ -19,7 +19,7 @@ class DateWizard {
     return new Date(this.timestamp);
   }
 
-  format(): string {
+  getString(): string {
     const formatString = "dd-MM-yyyy";
 
     const date = this.toDate();
