@@ -1,12 +1,18 @@
 {
   "name": "date-wizard-pro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
+    "clean": "rmdir /s /q dist",
+    "pretest": "npm run build",
     "test": "jest",
-    "build": "tsc"
+    "build": "npm run clean && tsc",
+    "prepublishOnly": "npm run build && npm run test"
   },
   "keywords": [],
   "author": "",
