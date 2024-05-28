@@ -51,3 +51,8 @@ class DateWizard {
 }
 
 export default DateWizard;
+
+// For CommonJS default export support
+module.exports = DateWizard;
+module.exports.default = DateWizard;
+module.exports.__esModule = true;
