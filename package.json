@@ -1,7 +1,7 @@
 {
   "name": "date-wizard-pro",
   "version": "0.0.4",
-  "description": "",
+  "description": "A powerful and flexible library for date/time manipulation in JavaScript/TypeScript projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,9 +14,27 @@
     "build-test": "npm run build && jest --testMatch \"**/general-test/builded-package.spec.ts\"",
     "prepublishOnly": "npm run build-test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "date",
+    "time",
+    "datetime",
+    "calendar",
+    "timezone",
+    "manipulation",
+    "library",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Damian Sire <damiansirecontacto@gmail.com> (https://damiansire.com)",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damiansire/date-wizard-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/damiansire/date-wizard-pro/issues"
+  },
+  "homepage": "https://github.com/damiansire/date-wizard-pro#readme",
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.12",
