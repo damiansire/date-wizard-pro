@@ -109,6 +109,7 @@
   "exclude": [
     "**/*.spec.*", // Excluye todos los archivos de prueba
     "jest.config.ts", // Excluye el archivo de configuración de Jest,
-    "./dist"
+    "./dist",
+    "test-helpers"
   ]
 }
