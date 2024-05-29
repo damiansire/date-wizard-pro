@@ -23,23 +23,27 @@ npm install date-wizard-pro
 ```javascript
 import DateWizard from "date-wizard-pro";
 
-// Create a DateWizard instance
-const myDate = new DateWizard("12-25-2023"); // Christmas 2023
+// Create a DateWizard instance for a specific date
+const myDate = new DateWizard("12-25-2024"); // Christmas 2024
 
-// addDays()
-myDate.addDays(7);
-console.log(myDate.getString("yyyy-mm-dd")); // Output: "2024-01-01" (New Year's Day 2024)
+// Get the formatted date in different ways
+myDate.getString(); // "2024-12-25"
+myDate.getString("dd-mm-yyyy"); // 25-12-2024
+myDate.getString("mm-dd-yyyy"); // 12-25-2024
+myDate.getString("dd/mm/yyyy"); // 25/12/2024
+myDate.getString("mm/dd/yyyy"); // 12/25/2024
 
-// subtractDays()
+// Modify the date: subtract Days
 myDate.subtractDays(10);
-console.log(myDate.getString()); // Output: "2023-12-15"
+myDate.getString(); // "2024-12-15"
+
+// Modify the date: add Days
+myDate.addDays(2);
+myDate.getString(); // "2024-12-17"
 
 // toDate()
 const jsDate = myDate.toDate();
-console.log(jsDate); // Output: JavaScript Date object (2023-12-15T00:00:00.000Z)
-
-// getString()
-console.log(myDate.getString("mm/dd/yyyy")); // Output: "12/15/2023"
+console.log(jsDate); // JavaScript Date object (2024-12-17T00:00:00.000Z)
 ```
 
 ### Static Methods:
@@ -48,16 +52,18 @@ console.log(myDate.getString("mm/dd/yyyy")); // Output: "12/15/2023"
 import DateWizard from "date-wizard-pro";
 
 // DateWizard.addDays()
-const newYear = DateWizard.addDays("12-25-2023", 7);
-console.log(newYear); // Output: "01-01-2024"
+DateWizard.getTodayDate(); // "28-05-2024"
+DateWizard.getTodayDate("mm/dd/yyyy"); // "05/28/2024"
+DateWizard.getTodayDate("mm-dd-yyyy"); // "05-28-2024"
+
+// DateWizard.addDays()
+DateWizard.addDays("12-25-2023", 7); // "01-01-2024"
 
 // DateWizard.subtractDays()
-const pastDate = DateWizard.subtractDays("12-25-2023", 10);
-console.log(pastDate); // Output: "12-15-2023"
+const pastDate = DateWizard.subtractDays("12-25-2023", 10); // "12-15-2023"
 
 // DateWizard.getString()
-const formattedDate = DateWizard.getString("12-25-2023", "yyyy-mm-dd");
-console.log(formattedDate); // Output: "2023-12-25"
+const formattedDate = DateWizard.getString("12-25-2023", "yyyy-mm-dd"); //"2023-12-25"
 ```
 
 ## API
@@ -85,6 +91,20 @@ Converts the `DateWizard` instance to a native JavaScript `Date` object.
 Returns the date as a formatted string. The `formatString` argument can be customized (e.g., "yyyy-mm-dd", "mm/dd/yyyy").
 
 ### Static Methods
+
+#### `DateWizard.getTodayDate(formatString = "dd-mm-yyyy"): string`
+
+This static function allows you to easily retrieve the current date formatted according to your preferences.
+
+- Returns today's date in the format specified by `formatString`.
+- If no `formatString` is provided, the default format "dd-mm-yyyy" (day-month-year) is used.
+
+**Example:**
+
+```javascript
+const today = DateWizard.getTodayDate();
+const usDate = DateWizard.getTodayDate("mm/dd/yyyy");
+```
 
 #### `DateWizard.addDays(dateString: string, days: number): string`
 
