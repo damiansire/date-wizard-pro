@@ -177,6 +177,40 @@ export const testDateWizard = (DateWizard: any) => {
           );
         });
       });
+      describe("DateWizard.getTodayDate()", () => {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, "0");
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const year = today.getFullYear();
+
+        const formatMap = {
+          "dd-mm-yyyy": `${day}-${month}-${year}`,
+          "mm-dd-yyyy": `${month}-${day}-${year}`,
+          "mm/dd/yyyy": `${month}/${day}/${year}`,
+          "yyyy/mm/dd": `${year}/${month}/${day}`,
+        };
+
+        // Función auxiliar para obtener la fecha actual en un formato específico
+        function getFormattedDate(format: keyof typeof formatMap) {
+          return formatMap[format] || formatMap["dd-mm-yyyy"];
+        }
+
+        const testCases = [
+          { format: "dd-mm-yyyy", expected: getFormattedDate("dd-mm-yyyy") },
+          { format: "mm-dd-yyyy", expected: getFormattedDate("mm-dd-yyyy") },
+          { format: "mm/dd/yyyy", expected: getFormattedDate("mm/dd/yyyy") },
+          { format: "yyyy/mm/dd", expected: getFormattedDate("yyyy/mm/dd") },
+          { format: undefined, expected: getFormattedDate("dd-mm-yyyy") },
+        ];
+
+        testCases.forEach((testCase) => {
+          it(`should return today's date in format '${testCase.format}' (or default)`, () => {
+            expect(DateWizard.getTodayDate(testCase.format)).toBe(
+              testCase.expected
+            );
+          });
+        });
+      });
     });
   });
 };

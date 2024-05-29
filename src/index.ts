@@ -48,6 +48,16 @@ class DateWizard {
     const dateWizard = new DateWizard(dateString);
     return dateWizard.getString(formatString);
   }
+
+  static getTodayDate = (formatString = "dd-mm-yyyy") => {
+    const hoy = new Date();
+    const dia = String(hoy.getDate()).padStart(2, "0");
+    const mes = String(hoy.getMonth() + 1).padStart(2, "0");
+    const anio = hoy.getFullYear();
+    const formatedDate = `${dia}-${mes}-${anio}`;
+    const dateWizard = new DateWizard(formatedDate);
+    return dateWizard.getString(formatString);
+  };
 }
 
 export default DateWizard;
