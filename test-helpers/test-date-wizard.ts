@@ -37,6 +37,10 @@ export const testDateWizard = (DateWizard: any) => {
             wizard.addDays(-7);
             expect(wizard.getString()).toBe("13-05-2024");
           });
+          it("the method returns the date", () => {
+            const result = wizard.addDays(-7);
+            expect(result).toBe("13-05-2024");
+          });
           it("should handle leap years correctly", () => {
             wizard = new DateWizard("29-02-2024"); //Leap-year
             wizard.addDays(1);
@@ -58,6 +62,10 @@ export const testDateWizard = (DateWizard: any) => {
           it("should subtract days exceed the start of the year", () => {
             wizard.subtractDays(366);
             expect(wizard.getString()).toBe("20-05-2023");
+          });
+          it("the method returns the date", () => {
+            const result = wizard.subtractDays(366);
+            expect(result).toBe("20-05-2023");
           });
           it("should handle leap years correctly", () => {
             wizard = new DateWizard("01-03-2024"); //Leap-year

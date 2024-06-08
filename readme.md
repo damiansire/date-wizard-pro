@@ -34,11 +34,13 @@ myDate.getString("dd/mm/yyyy"); // 25/12/2024
 myDate.getString("mm/dd/yyyy"); // 12/25/2024
 
 // Modify the date: subtract Days
-myDate.subtractDays(10);
+const result1 = myDate.subtractDays(10);
+console.log(result1); // "2024-12-15"
 myDate.getString(); // "2024-12-15"
 
 // Modify the date: add Days
-myDate.addDays(2);
+const result2 = myDate.addDays(2);
+console.log(result2); // "2024-12-17"
 myDate.getString(); // "2024-12-17"
 
 // toDate()
@@ -74,13 +76,13 @@ const formattedDate = DateWizard.getString("12-25-2023", "yyyy-mm-dd"); //"2023-
 
 Creates a new `DateWizard` instance. `dateString` should be in the format "dd-mm-yyyy".
 
-#### `addDays(days: number): this`
+#### `addDays(days: number): string`
 
-Adds the specified number of `days` to the date. Returns the `DateWizard` instance for method chaining.
+Adds the specified number of `days` to the date and returns the result as a formatted string in the default format ("dd-mm-yyyy").
 
-#### `subtractDays(days: number): this`
+#### `subtractDays(days: number): string`
 
-Subtracts the specified number of `days` from the date. Returns the `DateWizard` instance for method chaining.
+Subtracts the specified number of `days` from the date and returns the result as a formatted string in the default format ("dd-mm-yyyy").
 
 #### `toDate(): Date`
 

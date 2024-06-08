@@ -6,12 +6,12 @@ class DateWizard {
     this.timestamp = Date.UTC(year, month - 1, day);
   }
 
-  addDays(days: number): this {
+  addDays(days: number): string {
     this.timestamp += days * 24 * 60 * 60 * 1000;
-    return this;
+    return this.getString();
   }
 
-  subtractDays(days: number): this {
+  subtractDays(days: number): string {
     return this.addDays(-days);
   }
 
@@ -66,3 +66,6 @@ export default DateWizard;
 module.exports = DateWizard;
 module.exports.default = DateWizard;
 module.exports.__esModule = true;
+
+const currentDate = new DateWizard("01-03-2024");
+currentDate.addDays(10);
