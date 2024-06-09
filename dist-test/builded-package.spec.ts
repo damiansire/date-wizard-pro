@@ -6,5 +6,7 @@ describe("TEST BUILDED PACKAGE", () => {
     const RequireDateWizard = require("../dist/index");
     testDateWizard(RequireDateWizard);
   });
-  testDateWizard(DateWizard);
+  describe("import method", () => {
+    testDateWizard(DateWizard);
+  });
 });
