@@ -66,6 +66,3 @@ export default DateWizard;
 module.exports = DateWizard;
 module.exports.default = DateWizard;
 module.exports.__esModule = true;
-
-const currentDate = new DateWizard("01-03-2024");
-currentDate.addDays(10);
