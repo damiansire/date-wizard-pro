@@ -198,7 +198,7 @@ export const testDateWizard = (DateWizard: any) => {
           "yyyy/mm/dd": `${year}/${month}/${day}`,
         };
 
-        // Función auxiliar para obtener la fecha actual en un formato específico
+        // Helper function to get the current date in a specific format
         function getFormattedDate(format: keyof typeof formatMap) {
           return formatMap[format] || formatMap["dd-mm-yyyy"];
         }
