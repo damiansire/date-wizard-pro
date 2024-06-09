@@ -1,6 +1,6 @@
 {
   "name": "date-wizard-pro",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A powerful and flexible library for date/time manipulation in JavaScript/TypeScript projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
